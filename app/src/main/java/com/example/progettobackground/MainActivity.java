@@ -25,9 +25,12 @@ public class MainActivity extends AppCompatActivity {
             states.setStarted(!states.isStarted());
             if(states.isStarted()){
                 startService(myServiceIntent);
+                binding.startButton.setText("STOP BUTTON");
             } else {
                 Log.d("Service stopped","si");
                 stopService(myServiceIntent);
+                binding.startButton.setText("START BUTTON");
+
             }
         });
     }
